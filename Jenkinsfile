@@ -6,7 +6,7 @@ pipeline {
 	stage('Checkout git jobdsl2 N Get the Tag'){
 		agent { label 'master' }
             steps{
-	      		git credentialsId: 'jenkins-slave-docker', url: 'git@git.dlatv.net:mcorvalan/jobdsl2.git'
+	      		git credentialsId: 'jenkins', url: 'git@github.com:marcoscorvalan/pipeline01-.git'
 	      	script {
         		tags = sh(script: "git tag --sort=v:refname | tail -1", returnStdout: true).trim()
 					     }
