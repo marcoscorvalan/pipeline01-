@@ -38,10 +38,10 @@ pipeline {
               steps {
                 script {
                 	env.tags = sh(returnStdout: true, script: "git tag --sort=v:refname | tail -1")
-                     sh """
-                    brf=${env.tags}
-                    echo \$brf
-                		"""
+                     sh '''
+                    		brf=${env.tags}
+                    		echo $brf
+                		'''
 
                                 }
                            }
