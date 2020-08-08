@@ -37,6 +37,7 @@ pipeline {
           agent { label 'master' }
               steps {
                 script {
+                	env.tags = sh(returnStdout: true, script: "git tag --sort=v:refname | tail -1")
                      sh 'set brf = ${env.stringTags} && echo $brf'
 
                                 }
