@@ -23,7 +23,7 @@ pipeline {
 			  env.stringTags = env.tags
 			  env.lisTags = env.stringTags.tokenize('-')
 			  println('Show tokenize: ' + env.lisTags);
-			  println(env.lisTags.get(0));
+			  println(env.lisTags[0]);
 			
 			  
 			  
