@@ -42,9 +42,9 @@ pipeline {
                 script {
                      sh """
                     		tag=${env.tags}
-                    		echo \$tag
+                    		echo 'tag is: '\$tag
                     		partition=${env.partition}
-                    		echo \$partition
+                    		echo 'partition is: '\$partition
                 		"""
 
                                 }
