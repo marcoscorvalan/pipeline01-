@@ -23,7 +23,7 @@ pipeline {
 			  env.stringTags = env.tags
 			  env.lisTags = env.stringTags.tokenize('-')
 			  println('Show tokenize: ' + env.lisTags);
-			  println('Show 0 :' + env.lisTags[0]);
+			  assert env.size();
 			
 			  
 			  
