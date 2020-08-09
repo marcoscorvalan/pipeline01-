@@ -24,14 +24,7 @@ pipeline {
 			  env.lisTags = env.stringTags.tokenize('-')
 			  println('Show tokenize: ' + env.lisTags);
 			  println(env.lisTags.get(0));
-			  env.partitions = env.lisTags.get(0);
-			  println('Show partitions: ' + env.partitions)
-			  env.product = env.lisTags.get(1);
-			  println('Show product: ' + env.product)
-			  env.silo = env.lisTags.get(2);
-			  println('Show silo: ' + env.silo)
-			  env.enva = env.lisTags.get(3);
-			  println('Show env: ' + env.enva )
+			
 			  
 			  
 			  
