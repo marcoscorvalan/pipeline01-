@@ -23,10 +23,10 @@ pipeline {
 			  env.stringTags = env.tags
 			  env.lisTags = env.stringTags.tokenize('-')
 			  println('Show rokenize: ' + env.lisTags)
-			  env.partitions = lisTags.get(0);
-			  env.product = lisTags.get(1);
-			  env.silo = lisTags.get(2);
-			  env.enva = lisTags.get(3);
+			  env.partitions = env.lisTags.get(0);
+			  env.product = env.lisTags.get(1);
+			  env.silo = env.lisTags.get(2);
+			  env.enva = env.lisTags.get(3);
 			  println('Show partitions: ' + env.partitions)
 			  println('Show product: ' + env.product)
 			  println('Show silo: ' + env.silo)
