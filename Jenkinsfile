@@ -21,31 +21,11 @@ pipeline {
     		script {
     			env.tags = sh(returnStdout: true, script: "git tag --sort=v:refname | tail -1")
 			  env.stringTags = env.tags
-			  println('env.stringTags ')
-			  //env.lisTags = env.lisTags.tokenize('-')
-			  //env.partitions = lisTags.get(0);
-			  //env.product = lisTags.get(1);
-			  //env.silo = lisTags.get(2);
-			  //env.enva = lisTags.get(3);
-			  //println('Show partitions: ' + env.partitions)
-			  //  println('Show product: ' + env.product)
-			  //  println('Show silo: ' + env.silo)
-			  //  println('Show env: ' + env.enva )
+			  println('Esto es el result:' + env.stringTags )
+		
 					     }
     			  }
     		}
-	stage('Build DockerFile...') {
-          agent { label 'master' }
-              steps {
-                script {
-                	env.tags = sh(returnStdout: true, script: "git tag --sort=v:refname | tail -1")
-                     sh """
-                    		brf=${env.tags}
-                    		echo \$brf
-                		"""
 
-                                }
-                           }
-                      }
 		          }
     }
