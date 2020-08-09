@@ -18,13 +18,19 @@ pipeline {
    stage ('Convert result to List and show it') {
 		agent { label 'master' }
     		steps { echo "Convert result to List"
-    		 env.tags = sh(returnStdout: true, script: "git tag --sort=v:refname | tail -1")
+    		script {
+    			def tags = sh(returnStdout: true, script: "git tag --sort=v:refname | tail -1")
 			  env.stringTags = env.tags
 			  env.lisTags = env.stringTags.tokenize('-')
 			  println('Show tokenize: ' + env.lisTags);
-			  assert env.size();
-	     
-    				}
-    			}
-		    }
+			  println('Show = value: ' +env.lisTags.get(0));
+			
+			  
+			  
+			  
+					     }
+    			  }
+    		}
+
+		          }
     }
