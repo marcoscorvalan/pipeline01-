@@ -21,6 +21,7 @@ pipeline {
     		script {
     			def tags = sh(returnStdout: true, script: "git tag --sort=v:refname | tail -1")
     			stringTags = tags
+    			print(stringTags.tokenize('-'))
 			  lisTags = stringTags.tokenize('-')
 			  println('Show tokenize: ' + lisTags);
 			  println('Show = value: ' + lisTags.get(0));
