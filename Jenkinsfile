@@ -41,10 +41,28 @@ pipeline {
               steps {
                 script {
                      sh """
-                    		tag=${env.tags}
-                    		echo 'tag is: '\$tag
-                    		partition=${env.partition}
-                    		echo 'partition is: '\$partition
+                    		TAG=${env.tags}
+							PARTITION=${env.partition}
+							PRODUCT=env.product
+							SILO=env.silo
+							ENV=env.enva 
+							SERVICE=prov
+							REGION=eastus2
+							DATACENTER=azr
+							LONG_PARTITION=claroglobal
+							echo 'EN ESTA SECCION SE CONFIGURA LA REPLICA'
+							#-----------------------------------------------------------
+							echo 'PARTITION:  '\$PARTITION   #='cglo'
+							echo 'DATACENTER: '\$DATACENTER  #='azr'
+							echo 'REGION:     '\$REGION      #='eastus2'
+							echo 'PRODUCT:   '\$PRODUCT    #='cvideo'
+							echo 'SILO    :   '\$SILO        #='cross'
+							echo 'SERVICIE:   '\$SERVICE     #='prov'
+							echo 'TAG:        '\$TAG         #='test'
+							echo 'LONG_PARTITION:        '\$LONG_PARTITION         #='claroglobal'
+							echo '# array para saber el nombre largo de la particion teniendo como key la variable'  \$PARTITION
+							echo '------------------------- deploy-me.sh -------------------------'
+							echo \$ENV \$DATACENTER \$REGION \$PARTITION \$PRODUCT \$SERVICE \$SILO \$LONG_PARTITION \$TAG
                 		"""
 
                                 }
