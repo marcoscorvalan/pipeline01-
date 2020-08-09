@@ -4,7 +4,7 @@ pipeline {
     agent any
       stages {
 
-	stage('Checkout git jobdsl2 N Get the Tag'){
+	stage('Checkout git repo and Get the Tag'){
 		agent { label 'master' }
             steps{
 	      		git credentialsId: 'jenkins', url: 'git@github.com:marcoscorvalan/pipeline01-.git'
@@ -29,13 +29,15 @@ pipeline {
     	   	   } 
     		}
 
-    stage('Build DockerFile...') {
+    stage('Build Import Variable from List...') {
           agent { label 'master' }
               steps {
                 script {
                      sh """
-                    		brf=${tags}
-                    		echo \$brf
+                    		tag_name=${tags}
+                    		echo \$tag_name
+                    		partition_name=${env.partition}
+                    		echo \$partition_name
                 		"""
 
                                 }
