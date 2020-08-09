@@ -19,8 +19,8 @@ pipeline {
 		agent { label 'master' }
     		steps { echo "Convert result to List"
     		script {
-    			def tags = sh(returnStdout: true, script: "git tag --sort=v:refname | tail -1")
-    			stringTags = tags
+    		  env.tags = sh(returnStdout: true, script: "git tag --sort=v:refname | tail -1")
+    		  stringTags = env.tags
 			  lisTags = stringTags.tokenize('-')
 			  println('Show tokenize: ' + lisTags);
 			  env.partition = lisTags.get(0)
@@ -34,10 +34,10 @@ pipeline {
               steps {
                 script {
                      sh """
-                    		tag_name=${tags}
-                    		echo \$tag_name
-                    		partition_name=${env.partition}
-                    		echo \$partition_name
+                    		tag=${env.tags}
+                    		echo \$tag
+                    		partition=${env.partition}
+                    		echo \$partition
                 		"""
 
                                 }
