@@ -51,7 +51,7 @@ pipeline {
 							DATACENTER=azr
 							LONG_PARTITION=claroglobal
 							echo 'EN ESTA SECCION SE CONFIGURA LA REPLICA'
-							#-----------------------------------------------------------
+							echo '-----------------------------------------------------------'
 							echo 'PARTITION:  '\$PARTITION   #='cglo'
 							echo 'DATACENTER: '\$DATACENTER  #='azr'
 							echo 'REGION:     '\$REGION      #='eastus2'
@@ -60,7 +60,6 @@ pipeline {
 							echo 'SERVICIE:   '\$SERVICE     #='prov'
 							echo 'TAG:        '\$TAG         #='test'
 							echo 'LONG_PARTITION:        '\$LONG_PARTITION         #='claroglobal'
-							echo '# array para saber el nombre largo de la particion teniendo como key la variable'  \$PARTITION
 							echo '------------------------- deploy-me.sh -------------------------'
 							echo \$ENV \$DATACENTER \$REGION \$PARTITION \$PRODUCT \$SERVICE \$SILO \$LONG_PARTITION \$TAG
                 		"""
