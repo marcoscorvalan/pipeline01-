@@ -22,7 +22,8 @@ pipeline {
     			env.tags = sh(returnStdout: true, script: "git tag --sort=v:refname | tail -1")
 			  env.stringTags = env.tags
 			  env.lisTags = env.stringTags.tokenize('-')
-			  println('Show tokenize: ' + env.lisTags)
+			  println('Show tokenize: ' + env.lisTags);
+			  println(env.lisTags.get(0));
 			  env.partitions = env.lisTags.get(0);
 			  println('Show partitions: ' + env.partitions)
 			  env.product = env.lisTags.get(1);
