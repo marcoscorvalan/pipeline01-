@@ -20,9 +20,9 @@ pipeline {
     		steps { echo "Convert result to List"
     		script {
     			def tags = sh(returnStdout: true, script: "git tag --sort=v:refname | tail -1")
-    			env.stringTags = tags
+    			stringTags = tags
 			  //env.stringTags = env.tags
-			  lisTags = env.stringTags.tokenize('-')
+			  lisTags = stringTags.tokenize('-')
 			  println('Show tokenize: ' + env.lisTags);
 			  println('Show = value: ' +lisTags.get(0));
 			
