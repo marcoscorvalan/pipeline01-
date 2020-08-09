@@ -24,7 +24,7 @@ pipeline {
 			  lisTags = stringTags.tokenize('-')
 			  println('Show tokenize: ' + lisTags);
 			  env.partition = lisTags.get(0)
-			  println('Show = value: ' + env.partition );
+			  println('Show = partition: ' + env.partition );
 			
 			  
 			  
