@@ -25,13 +25,21 @@ pipeline {
 			  println('Show tokenize: ' + lisTags);
 			  env.partition = lisTags.get(0)
 			  println('Show = partition: ' + env.partition );
-			
-			  
-			  
-			  
-					     }
-    			  }
+					}
+    	   	   } 
     		}
 
-		          }
+    stage('Build DockerFile...') {
+          agent { label 'master' }
+              steps {
+                script {
+                     sh """
+                    		brf=${tags}
+                    		echo \$brf
+                		"""
+
+                                }
+                           }
+                      }
+		 }
     }
