@@ -27,7 +27,7 @@ pipeline {
 			  env.product = lisTags.get(1);
 			  env.silo = lisTags.get(2);
 			  env.enva = lisTags.get(3);
-			  println('Show partitions: ' + env.partitions);
+			  println('Show partitions: ' + env.partition);
 			  println('Show product: ' + env.product);
 			  println('Show silo: ' + env.silo);
 			  println('Show env: ' + env.enva );
