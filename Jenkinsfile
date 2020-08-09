@@ -43,9 +43,9 @@ pipeline {
                      sh """
                     		TAG=${env.tags}
 							PARTITION=${env.partition}
-							PRODUCT=env.product
-							SILO=env.silo
-							ENV=env.enva 
+							PRODUCT=${env.product}
+							SILO=${env.silo}
+							ENV=${env.enva} 
 							SERVICE=prov
 							REGION=eastus2
 							DATACENTER=azr
