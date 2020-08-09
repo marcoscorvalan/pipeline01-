@@ -22,6 +22,7 @@ pipeline {
     			env.tags = sh(returnStdout: true, script: "git tag --sort=v:refname | tail -1")
 			  env.stringTags = env.tags
 			  env.lisTags = env.stringTags.tokenize('-')
+			  println('Show rokenize: ' + env.lisTags)
 			  env.partitions = lisTags.get(0);
 			  env.product = lisTags.get(1);
 			  env.silo = lisTags.get(2);
